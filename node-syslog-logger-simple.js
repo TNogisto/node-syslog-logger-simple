@@ -75,7 +75,7 @@ nodeSyslogLoggerSimple.prototype._log =  function (level,msg,cb) {
 		if ( !this._syslog) {
 			this._syslog = new nodeSyslogLogger({tag:this._tag, level:this._level, facility:this._facility});
 		}
-		this._syslogger._log(level,msg,cb);
+		this._syslog._log(level,msg,cb);
 	} else {
 		var _now = new Date().toISOString();
 		var _msg = _now + ' ' + this._tag + '[' + this._pid + ']: level=' + LEVELS[level] + '; ' + msg;
