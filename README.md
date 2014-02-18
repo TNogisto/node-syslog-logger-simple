@@ -12,6 +12,8 @@ sorry, not sexy and sorry, brain's are needed
 
 please read https://www.ietf.org/rfc/rfc3164.txt
 
+please see https://github.com/schamane/node-syslog
+
 
 ## install
 
@@ -31,9 +33,36 @@ npm install https://github.com/hillar/node-syslog-logger-simple/archive/master.t
 
 var NodeSyslogLoggerSimple = require("node-syslog-logger-simple");
 
-var logger = new NodeSyslogLoggerSimple();
+global.logger = new NodeSyslogLoggerSimple();
 
 logger.notice('action=loggin; user=hillar');
 
 
 ```
+
+
+
+```
+#$ node node_modules/node-syslog-logger-simple/test-node-syslog-logger-simple.js 
+2014-02-18T19:13:54.189Z node[74666]: level=ALERT; test=alert
+2014-02-18T19:13:54.192Z node[74666]: level=CRITICAL; test=critical
+2014-02-18T19:13:54.192Z node[74666]: level=ERROR; test=error
+2014-02-18T19:13:54.192Z node[74666]: level=WARNING; test=warning
+2014-02-18T19:13:54.192Z node[74666]: level=NOTICE; test=notice
+
+#$ node node_modules/node-syslog-logger-simple/test-node-syslog-logger-simple.js | head
+ok
+ok
+ok
+ok
+ok
+ok
+
+#$ tail -7 /var/log/system.log
+Feb 18 21:14:03 noname-2 node[74667]: action=start; log_level=5; log_facility=40;
+Feb 18 21:14:03 noname-2 node[74667]: test=alert
+Feb 18 21:14:03 noname-2 node[74667]: test=critical
+Feb 18 21:14:03 noname-2 node[74667]: test=error
+Feb 18 21:14:03 noname-2 node[74667]: test=warning
+Feb 18 21:14:03 noname-2 node[74667]: test=notice
+Feb 18 21:14:03 noname-2 node[74667]: action=exit; exit_code=0;
