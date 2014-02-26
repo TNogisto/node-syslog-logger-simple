@@ -91,10 +91,11 @@ nodeSyslogLoggerSimple.prototype._log =  function (level,msg,cb) {
 
 nodeSyslogLoggerSimple.prototype.emergency = function (msg, cb) {
 
+	var _cb = cb || function(e,r) {};
 	if ( LOG_EMERG <= this._level ) {
-		this._log(LOG_EMERG, msg, cb);
+		this._log(LOG_EMERG, msg, _cb);
 	} else {
-		return cb(null);
+		return _cb(null);
 	}
 
 };
@@ -102,10 +103,11 @@ nodeSyslogLoggerSimple.prototype.emergency = function (msg, cb) {
 
 nodeSyslogLoggerSimple.prototype.alert = function (msg, cb) {
 
+	var _cb = cb || function(e,r) {};
 	if ( LOG_ALERT <= this._level ) {
-		this._log(LOG_ALERT, msg, cb);
+		this._log(LOG_ALERT, msg, _cb);
 	} else {
-		return cb(null);
+		return _cb(null);
 	}
 
 };
@@ -113,10 +115,11 @@ nodeSyslogLoggerSimple.prototype.alert = function (msg, cb) {
 
 nodeSyslogLoggerSimple.prototype.critical = function (msg, cb) {
 
+	var _cb = cb || function(e,r) {};
 	if ( LOG_CRIT <= this._level ) {
-		this._log(LOG_CRIT, msg, cb);
+		this._log(LOG_CRIT, msg, _cb);
 	} else {
-		return cb(null);
+		return _cb(null);
 	}
 
 };
@@ -124,10 +127,11 @@ nodeSyslogLoggerSimple.prototype.critical = function (msg, cb) {
 
 nodeSyslogLoggerSimple.prototype.error = function (msg, cb) {
 
+	var _cb = cb || function(e,r) {};
 	if ( LOG_ERR <= this._level ) {
-		this._log(LOG_ERR, msg, cb);
+		this._log(LOG_ERR, msg, _cb);
 	} else {
-		return cb(null);
+		return _cb(null);
 	}
 
 };
@@ -135,10 +139,11 @@ nodeSyslogLoggerSimple.prototype.error = function (msg, cb) {
 
 nodeSyslogLoggerSimple.prototype.warning = function (msg, cb) {
 
+	var _cb = cb || function(e,r) {};
 	if ( LOG_WARNING <= this._level ) {
-		this._log(LOG_WARNING, msg, cb);
+		this._log(LOG_WARNING, msg, _cb);
 	} else {
-		return cb(null);
+		return _cb(null);
 	}
 
 };
@@ -146,10 +151,11 @@ nodeSyslogLoggerSimple.prototype.warning = function (msg, cb) {
 
 nodeSyslogLoggerSimple.prototype.notice = function (msg, cb) {
 
+	var _cb = cb || function(e,r) {};
 	if ( LOG_NOTICE <= this._level ) {
-		this._log(LOG_NOTICE, msg, cb);
+		this._log(LOG_NOTICE, msg, _cb);
 	} else {
-		return cb(null);
+		return _cb(null);
 	}
 
 };
@@ -157,10 +163,11 @@ nodeSyslogLoggerSimple.prototype.notice = function (msg, cb) {
 
 nodeSyslogLoggerSimple.prototype.info = function (msg, cb) {
 
+	var _cb = cb || function(e,r) {};
 	if ( LOG_INFO <= this._level ) {
-		this._log(LOG_INFO, msg, cb);
+		this._log(LOG_INFO, msg, _cb);
 	} else {
-		return cb(null);
+		return _cb(null);
 	}
 
 };
@@ -168,10 +175,11 @@ nodeSyslogLoggerSimple.prototype.info = function (msg, cb) {
 
 nodeSyslogLoggerSimple.prototype.debug = function (msg, cb) {
 
+	var _cb = cb || function(e,r) {};
 	if ( LOG_DEBUG <= this._level ) {
-		this._log(LOG_DEBUG, msg, cb);
+		this._log(LOG_DEBUG, msg, _cb);
 	} else {
-		return cb(null);
+		return _cb(null);
 	}
 
 };
